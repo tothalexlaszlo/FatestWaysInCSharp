@@ -13,7 +13,7 @@ public partial class EmailAddressValidator
 
     public bool RegexCompiled(in string emailAddress) => _oldEmailRegexCompiled.IsMatch(emailAddress);
 
-    [RegexGenerator(_emailRegex)]
+    [GeneratedRegex(_emailRegex)]
     private partial Regex RegexSourceGen();
 
     public bool RegexSourceGen(in string emailAddress) => RegexSourceGen().IsMatch(emailAddress);
